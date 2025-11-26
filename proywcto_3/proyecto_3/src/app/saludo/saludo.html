@@ -1,0 +1,8 @@
+<div style="text-align:center; margin-top:20px;"> 
+  <h2>Saludo en Angular</h2> 
+ 
+  <input [(ngModel)]="nombre" placeholder="Escribe tu nombre" /> 
+  <button (click)="saludar()">Saludar</button> 
+ 
+  <p *ngIf="mensaje">{{ mensaje }}</p> 
+</div>

@@ -1,0 +1,50 @@
+<div class="halloween-container">
+  <header class="header">
+    <h1>🎃 Catálogo Halloween 2024 🎃</h1>
+    <p class="subtitle">¡Los mejores productos para tu fiesta de terror!</p>
+  </header>
+
+  <!-- Mensaje de compra -->
+  <div class="mensaje-compra" *ngIf="productoComprado">
+    {{ productoComprado }}
+  </div>
+
+  <!-- Catálogo de productos -->
+  <div class="catalogo-grid">
+    <div class="producto-card" *ngFor="let producto of productos">
+      <div class="producto-imagen">
+        <img [src]="producto.getImagen()" [alt]="producto.getNombre()">
+        <div class="badge-disponibilidad" [class.no-disponible]="!producto.getDisponible()">
+          {{ producto.getDisponible() ? '✓ Disponible' : '✗ Agotado' }}
+        </div>
+      </div>
+
+      <div class="producto-info">
+        <h3 class="producto-nombre">{{ producto.getNombre() }}</h3>
+        <p class="producto-descripcion">{{ producto.getDescripcion() }}</p>
+        
+        <div class="producto-footer">
+          <span class="producto-precio">€{{ producto.getPrecio().toFixed(2) }}</span>
+          
+          <!-- Botón de comprar solo si está disponible -->
+          <button 
+            *ngIf="producto.getDisponible()" 
+            class="btn-comprar"
+            (click)="comprarProducto(producto)">
+            🛒 Comprar
+          </button>
+
+          <!-- Mensaje si no está disponible -->
+          <div *ngIf="!producto.getDisponible()" class="mensaje-agotado">
+            <span>😢 Producto no disponible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mensaje si no hay productos -->
+  <div class="no-productos" *ngIf="productos.length === 0">
+    <p>👻 No hay productos disponibles en este momento</p>
+  </div>
+</div>

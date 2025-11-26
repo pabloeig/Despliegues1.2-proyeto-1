@@ -1,0 +1,48 @@
+.dni-calculadora {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.dni-calculadora h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.dni-calculadora label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.dni-calculadora input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.dni-calculadora button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dni-calculadora button:hover {
+  background-color: #005fa3;
+}
+
+.dni-calculadora .message {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}

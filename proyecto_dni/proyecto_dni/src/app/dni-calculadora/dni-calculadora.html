@@ -1,0 +1,25 @@
+<div class="dni-calculadora">
+  <h2>Calculadora de Letra DNI</h2>
+  <label for="dniNumber">Número de DNI:</label>
+  <input
+    id="dniNumber"
+    type="number"
+    [value]="dniNumber()"
+    (input)="dniNumber.set($any($event.target).valueAsNumber)"
+    min="0"
+    max="99999999"
+  />
+
+  <label for="dniLetter">Letra de DNI:</label>
+  <input
+    id="dniLetter"
+    type="text"
+    maxlength="1"
+    [value]="dniLetter()"
+    (input)="dniLetter.set($any($event.target).value.toUpperCase())"
+  />
+
+  <button (click)="validarDni()">Validar DNI</button>
+
+  <p class="message">{{ message() }}</p>
+</div>
